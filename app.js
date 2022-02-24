@@ -49,6 +49,9 @@ const request= https.request(url, options, function(response){
 request.write(jsonData);
 request.end();
 });
+app.post("/failiure", function(req, res){
+  res.redirect("/");
+});
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("server is running on 3000");
