@@ -35,7 +35,7 @@ const options = {
   auth: "hackmol:c9570883ad25b34a99b899061d9ff0b8-us14"
 };
 const request= https.request(url, options, function(response){
-  if (response.statusCode ===200){
+  if (response.statusCode === 200){
     res.sendFile(__dirname + "/success.html");
   } else{
     res.sendFile(__dirname + "/failiure.html");
@@ -46,13 +46,14 @@ const request= https.request(url, options, function(response){
 
 }
 );
-
+//request.write(jsonData);
+request.end();
 });
 app.post("/failiure", function(req, res){
   res.redirect("/");
 });
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT|| 3000, function(){
   console.log("server is running on 3000");
 });
 
