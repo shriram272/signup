@@ -46,8 +46,7 @@ const request= https.request(url, options, function(response){
 
 }
 );
-request.write(jsonData);
-request.end();
+
 });
 app.post("/failiure", function(req, res){
   res.redirect("/");
