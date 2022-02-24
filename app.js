@@ -40,9 +40,13 @@ const request= https.request(url, options, function(response){
   } else{
     res.sendFile(__dirname + "/failiure.html");
   }
-
+  response.on("data", function(data){
+    console.log(JSON.parse(data));
   });
 
+  });
+request.write(jsonData);
+request.end();
 
 
 });
